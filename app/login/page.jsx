@@ -3,6 +3,7 @@
 import { useState } from "react"; // Import useState untuk mengelola pesan error
 import { authenticate } from "@/libs/auth/action";
 import { useFormStatus } from "react-dom"; // Import hook untuk status form
+import Link from "next/link";
 
 export default function LoginPage() {
   // Sisipkan perintah berikut

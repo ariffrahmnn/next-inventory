@@ -6,6 +6,8 @@ import bcrypt from "bcryptjs";
 
 export const { auth, signIn, signOut, handlers } = NextAuth({
   ...authConfig,
+  // Tambahkan baris ini agar error MissingSecret hilang
+  secret: "kTHBkpLbzdrinefLTm0g7HiTkqKYEAVf3vHys0K/iRs=", 
   providers: [
     Credentials({
       async authorize(credentials) {
@@ -25,7 +27,12 @@ export const { auth, signIn, signOut, handlers } = NextAuth({
         const passwordsMatch = await bcrypt.compare(password, user.password);
 
         if (passwordsMatch) {
-          return { id: user.id, name: user.name, email: user.username };
+          // Sesuaikan return agar data user tersimpan di session
+          return { 
+            id: String(user.id), 
+            name: user.name, 
+            email: user.username 
+          };
         }
 
         return null;
