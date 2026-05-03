@@ -1,6 +1,14 @@
-/** @type {import('next').NextConfig} */
+/** @type {import('next').NextjsConfig} */
 const nextConfig = {
-  /* config options here */
+  async redirects() {
+    return [
+      {
+        source: '/',
+        destination: '/login',
+        permanent: true, // Gunakan true jika ingin redirect permanen (308)
+      },
+    ];
+  },
 };
 
 export default nextConfig;

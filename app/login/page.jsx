@@ -22,10 +22,10 @@ export default function LoginPage() {
           Login Maju Jaya
         </h1>
 
-        {/* Tambahkan properti action dengan nilai handleSubmit */}
+
         <form className="flex flex-col gap-4" action={handleSubmit}>
           <div>
-            {/* Tambahkan properti name dengan nilai username */}
+
             <input
               type="text"
               name="username"
@@ -35,7 +35,7 @@ export default function LoginPage() {
             />
           </div>
           <div>
-            {/* Tambahkan properti name dengan nilai password */}
+
             <input
               type="password"
               name="password"
@@ -49,7 +49,7 @@ export default function LoginPage() {
             <p className="text-red-500 text-sm italic">{errorMessage}</p>
           )}
 
-          {/* Ganti tombol yang lama dengan komponen LoginButton */}
+
           <LoginButton />
           <Link 
           href="/register" 
@@ -63,8 +63,6 @@ export default function LoginPage() {
   );
 }
 
-// Sisipkan perintah berikut
-// Komponen tombol agar bisa menampilkan status "Loading"
 function LoginButton() {
   const { pending } = useFormStatus();
   return (
