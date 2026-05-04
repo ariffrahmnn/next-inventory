@@ -13,7 +13,6 @@ export default function LoginPage() {
     const error = await authenticate(formData);
     if (error) setErrorMessage(error);
   };
-  // -------------------------
 
   return (
     <main className="min-h-screen flex items-center justify-center bg-gray-200">
