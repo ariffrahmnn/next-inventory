@@ -2,6 +2,19 @@ import { getProductById, updateProduct } from "@/libs/product/action";
 import { redirect } from "next/navigation";
 import Link from "next/link";
 
+export async function generateStaticParams() {
+
+  const products = [
+    { id: '1' },
+    { id: '2' },
+    { id: '3' }
+  ];
+
+  return products.map((product) => ({
+    id: product.id,
+  }));
+}
+
 export default async function EditProductPage({ params }) {
     // 1. Ambil ID dari URL (params harus di-await di Next.js versi terbaru)
     const { id } = await params;

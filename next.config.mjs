@@ -3,6 +3,7 @@ const nextConfig = {
   async redirects() {
     return [
       {
+        output: "export",
         source: '/',
         destination: '/login',
         permanent: true, // Gunakan true jika ingin redirect permanen (308)
